@@ -62,9 +62,9 @@ app.get("/api/jobs/:id",async (req,res) => {
 
 //Post a new job
 app.post("/api/jobs", async (req,res) =>{
+    const newJob = req.body;
     try {
-        const job =req.body;
-        const result = await jobsCollection.insertOne(job);
+        const result = await jobsCollection.insertOne(newJob);
         res.status(201).json({message:"Job Posted Successfully", id: result.insertedId});
     } catch (error){
         res.status(500).json({error:"Failed to post job"});
