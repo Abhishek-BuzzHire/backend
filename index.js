@@ -21,7 +21,7 @@ async function startServer() {
         //connect to MongoDB
         await client.connect();
         const db = client.db("jobDashboard");
-        jobsCollection = db.collection("jobs");
+        jobsCollection = db.collection("New_Jobs");
 
         console.log("Connected to MongoDB");
 
